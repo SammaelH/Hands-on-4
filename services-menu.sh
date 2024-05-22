@@ -1,12 +1,12 @@
 #!/bin/bash
-
+#Hernandez Meza Midgard Sammael 216597627
 # Function to display the menu
 show_menu() {
-    echo "1) Option 1" #Listar el contenido de un fichero
-    echo "2) Option 2" #Crear un archivo de texto
-    echo "3) Option 3" #Comparar dos archivos texto
-    echo "4) Option 4" #awk
-    echo "5) Option 5" #grep
+    echo "1) Option 1" Listar el contenido de un fichero
+    echo "2) Option 2" Crear un archivo de texto
+    echo "3) Option 3" Comparar dos archivos texto
+    echo "4) Option 4" awk
+    echo "5) Option 5" grep
     echo "6) Exit"
 }
 
@@ -36,12 +36,19 @@ handle_choice() {
             echo $CArch1
             read -p "ingrese nombre del archivo 2" CArch2
             echo $CArch2
+            diff $CArch1 $CArch2
             ;;
         4)
             echo "You chose Option 4: awk"
+            read -p "ingrese nombre del archivo " Arch2
+            echo $Arch2
+            awk '{print $1,$4}' $Arch2  #mostrara los datos de las posiciones 1 y 4
             ;;
         5)
             echo "You chose Option 5: grep"
+            read -p "ingrese nombre del archivo " Arch3
+            echo $Arch3
+            grep -w "match" $Arch3
             ;;
         6)
             echo "Exiting..."
